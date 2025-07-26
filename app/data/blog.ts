@@ -2,8 +2,8 @@ import matter from "gray-matter";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
 import { z } from "zod";
 
 export type Post = {
@@ -49,21 +49,34 @@ async function getSlugList(env: Env): Promise<string[]> {
   return slugs;
 }
 
+/**
+ * Fetches and parses a single post by slug from R2
+ */
+export async function getPost(env: Env, slug: string): Promise<Post> {
+  const key = `${slug}.mdx`;
+  const object = await env.portfolio_blog.get(key);
+  if (!object) {
+    throw new Error(`Post not found: ${slug}`);
+  }
+  const raw = await object.text();
+  const matterResult = matter(raw);
+  const parse = metadataSchema.safeParse(matterResult.data);
+  if (!parse.success) {
+    throw new Error(`Invalid metadata for ${slug}: ${JSON.stringify(parse.error.format())}`);
+  }
+  const metadata = parse.data;
+  const source = await markdownToHTML(matterResult.content);
+  return { slug, metadata, source };
+}
+
+/**
+ * Lists all posts (with full metadata and HTML) from R2
+ */
 export async function getAllPosts(env: Env): Promise<Post[]> {
   const slugs = await getSlugList(env);
   return Promise.all(
     slugs.map(async (slug) => {
-      const object = await env.portfolio_blog.get(`${slug}.mdx`);
-      if (!object) throw new Error(`Missing ${slug}.mdx`);
-      const raw = await object.text();
-      const matterResult = matter(raw);
-      const parse = metadataSchema.safeParse(matterResult.data);
-      if (!parse.success) {
-        throw new Error(`Invalid metadata for ${slug}: ${JSON.stringify(parse.error.format())}`);
-      }
-      const metadata = parse.data;
-      const source = await markdownToHTML(matterResult.content);
-      return { slug, metadata, source };
+      return getPost(env, slug);
     })
   );
 }

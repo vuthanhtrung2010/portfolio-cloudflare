@@ -31,7 +31,7 @@ export default function BlogPage({ loaderData }: Route.ComponentProps) {
   return (
     <section>
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+        <h1 className="font-medium text-2xl mb-8 tracking-tighter">Trung's Blog Post</h1>
       </BlurFade>
       {sorted.map((post, idx) => (
         <BlurFade delay={BLUR_FADE_DELAY * 2 + idx * 0.05} key={post.slug}>
