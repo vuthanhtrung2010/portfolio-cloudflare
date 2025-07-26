@@ -6,4 +6,12 @@
     "nodejs_compat"
   ],
   "main": "./workers/app.ts",
+  "r2_buckets": [
+    {
+      "binding": "portfolio_blog",
+      "bucket_name": "portfolio-blog",
+      "preview_bucket_name": "portfolio-blog-test",
+      "experimental_remote": true
+    }
+  ],
 }
