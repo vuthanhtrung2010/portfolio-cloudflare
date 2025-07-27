@@ -8,7 +8,7 @@ export const DATA = {
   description: "A Junior Developer. Comes from Vietnam",
   summary:
     "I am a Junior Developer. I have learned over 6 programming languages with many skills like Docker, Databases, etc.",
-  avatarUrl: "/assets/pfp.webp",
+  avatarUrl: "https://img.trunghsgs.edu.vn/pfp.webp",
   skills: [
     "React",
     "Next.JS",
@@ -75,7 +75,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/assets/projects/URL-Shortener.webp",
+      image: "https://img.trunghsgs.edu.vn/URL-Shortener.webp",
       video: "",
     },
     {
@@ -105,8 +105,48 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/assets/projects/Spotify Status.webp",
+      image: "https://img.trunghsgs.edu.vn/Spotify-Status.webp",
       video: "",
     },
+  ],
+  hackathons: [
+    {
+      title: "HSGS Hackathon 2025",
+      dates: "July 16th - 18th, 2025",
+      location: "HUS High School for Gifted Students, Hanoi, Vietnam",
+      description:
+        "Developed a web application to help students manage their study schedule and assignments around all school subjects.",
+      image: "https://img.trunghsgs.edu.vn/HSGS-logo.png",
+      links: [
+        {
+          icon: <Icons.globe className="h-4 w-4" />,
+          title: "Website",
+          href: "https://hackathon.trunghsgs.edu.vn",
+        },
+        {
+          icon: <Icons.github className="h-4 w-4" />,
+          title: "Frontend (Next.js)",
+          href: "https://github.com/vuthanhtrung2010/hsgs-hackathon-2025"
+        },
+        {
+          icon: <Icons.github className="h-4 w-4" />,
+          title: "Frontend (React Router)",
+          href: "https://github.com/vuthanhtrung2010/hsgs-hackathon-2025-react-router"
+        },
+        {
+          icon: <Icons.github className="h-4 w-4" />,
+          title: "Backend",
+          href: "https://github.com/vuthanhtrung2010/hsgs-hackathon-2025-backend"
+        }
+      ]
+    },
+    {
+      title: "CSP Hackathon 2024",
+      dates: "September 5th, 2024",
+      location: "HNUE High School for Gifted Students, Hanoi, Vietnam",
+      description: "Do CP and earn money?",
+      image: "https://img.trunghsgs.edu.vn/CSP-Hackathon-2024.jpg",
+      links: []
+    }
   ],
 } as const;
