@@ -111,6 +111,24 @@ export const DATA = {
       video: "",
     },
   ],
+  education: [
+    {
+      school: "HUS High School for Gifted Students",
+      href: "https://hsgs.edu.vn",
+      degree: "Inforation Technology",
+      logoUrl: "https://img.trunghsgs.edu.vn/HSGS-logo.png",
+      start: "2025",
+      end: "2028"
+    },
+    {
+      school: "Khương Mai Secondary School",
+      href: "https://thcskhuongmai.hanoi.edu.vn",
+      degree: "Secondary School",
+      logoUrl: "https://img.trunghsgs.edu.vn/THCS-KM-logo.png",
+      start: "2021",
+      end: "2025"
+    }
+  ],
   hackathons: [
     {
       title: "HSGS Hackathon 2025",

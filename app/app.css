@@ -12,12 +12,13 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-background;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
 }
+
  /* Shadcn UI auto generated styles */ 
 @theme inline {
   --container-padding: 2rem;
