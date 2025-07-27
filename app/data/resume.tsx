@@ -1,5 +1,7 @@
 import { Icons } from "~/components/Icons";
 import { CodeIcon, HomeIcon, NotebookIcon } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 export const DATA = {
   name: "Trung",
@@ -146,7 +148,13 @@ export const DATA = {
       location: "HNUE High School for Gifted Students, Hanoi, Vietnam",
       description: "Do CP and earn money?",
       image: "https://img.trunghsgs.edu.vn/CSP-Hackathon-2024.jpg",
-      links: []
+      links: [
+        {
+          title: "Fanpage",
+          icon: <FontAwesomeIcon icon={faFacebook} className="h-4 w-4" />,
+          href: "https://www.facebook.com/csp.hackathon",
+        }
+      ]
     }
   ],
 } as const;
