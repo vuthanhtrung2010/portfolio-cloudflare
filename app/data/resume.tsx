@@ -127,6 +127,14 @@ export const DATA = {
       logoUrl: "https://img.trunghsgs.edu.vn/THCS-KM-logo.png",
       start: "2021",
       end: "2025"
+    },
+    {
+      school: "Tứ Liên - Tây Hồ Primary School",
+      href: "http://thtulientayho.edu.vn/",
+      degree: "Primary School",
+      logoUrl: "https://img.trunghsgs.edu.vn/TieuHoc-TuLien-logo.png",
+      start: "2016",
+      end: "2021"
     }
   ],
   hackathons: [
