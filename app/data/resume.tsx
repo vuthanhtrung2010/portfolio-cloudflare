@@ -10,7 +10,7 @@ export const DATA = {
   description: "A Junior Developer. Comes from Vietnam",
   summary:
     "I am a Junior Developer. I have learned over 6 programming languages with many skills like Docker, Databases, etc.",
-  avatarUrl: "https://img.trunghsgs.edu.vn/pfp.webp",
+  avatarUrl: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=110,format=webp/pfp.webp",
   skills: [
     "React",
     "Next.JS",
@@ -77,7 +77,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "https://img.trunghsgs.edu.vn/URL-Shortener.webp",
+      image: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=362,format=webp/URL-Shortener.webp",
       video: "",
     },
     {
@@ -107,7 +107,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "https://img.trunghsgs.edu.vn/Spotify-Status.webp",
+      image: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=362,format=webp/Spotify-Status.webp",
       video: "",
     },
   ],
@@ -116,7 +116,7 @@ export const DATA = {
       school: "HUS High School for Gifted Students",
       href: "https://hsgs.edu.vn",
       degree: "Inforation Technology",
-      logoUrl: "https://img.trunghsgs.edu.vn/HSGS-logo.png",
+      logoUrl: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=46,height=37,format=webp/HSGS-logo.png",
       start: "2025",
       end: "2028"
     },
@@ -124,7 +124,7 @@ export const DATA = {
       school: "Khương Mai Secondary School",
       href: "https://thcskhuongmai.hanoi.edu.vn",
       degree: "Secondary School",
-      logoUrl: "https://img.trunghsgs.edu.vn/THCS-KM-logo.png",
+      logoUrl: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=46,height=46,format=webp/THCS-KM-logo.png",
       start: "2021",
       end: "2025"
     },
@@ -132,7 +132,7 @@ export const DATA = {
       school: "Tứ Liên - Tây Hồ Primary School",
       href: "http://thtulientayho.edu.vn/",
       degree: "Primary School",
-      logoUrl: "https://img.trunghsgs.edu.vn/TieuHoc-TuLien-logo.png",
+      logoUrl: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=46,height=46,format=webp/TieuHoc-TuLien-logo.png",
       start: "2016",
       end: "2021"
     }
@@ -144,7 +144,7 @@ export const DATA = {
       location: "HUS High School for Gifted Students, Hanoi, Vietnam",
       description:
         "Developed a web application to help students manage their study schedule and assignments around all school subjects.",
-      image: "https://img.trunghsgs.edu.vn/HSGS-logo.png",
+      image: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=46,height=37,format=webp/HSGS-logo.png",
       links: [
         {
           icon: <Icons.globe className="h-4 w-4" />,
@@ -173,7 +173,7 @@ export const DATA = {
       dates: "September 5th, 2024",
       location: "HNUE High School for Gifted Students, Hanoi, Vietnam",
       description: "Do CP and earn money?",
-      image: "https://img.trunghsgs.edu.vn/CSP-Hackathon-2024.jpg",
+      image: "https://img.trunghsgs.edu.vn/cdn-cgi/image/width=46,height=46,format=webp/CSP-Hackathon-2024.jpg",
       links: [
         {
           title: "Fanpage",
