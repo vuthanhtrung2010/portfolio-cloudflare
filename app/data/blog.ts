@@ -16,6 +16,7 @@ export type Post = {
     image?: string;
   };
   source: string;
+  rawContent: string; // Add raw markdown content for client-side processing
 };
 
 const metadataSchema = z.object({
@@ -68,7 +69,7 @@ export async function getPost(env: Env, slug: string): Promise<Post> {
   }
   const metadata = parse.data;
   const source = await markdownToHTML(matterResult.content);
-  return { slug, metadata, source };
+  return { slug, metadata, source, rawContent: matterResult.content };
 }
 
 /**

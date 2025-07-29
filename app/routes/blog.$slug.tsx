@@ -4,6 +4,7 @@ import { formatDate } from "~/lib/utils";
 import { Suspense } from "react";
 import type { Route } from "./+types/blog.$slug";
 import { Link } from "react-router";
+import { MarkdownRenderer } from "~/components/MarkdownRenderer";
 
 export async function loader({ params, context }: Route.LoaderArgs) {
     let post = await getPost(context.cloudflare.env, params.slug);
@@ -51,10 +52,10 @@ export default async function Blog({ loaderData }: Route.ComponentProps) {
           </p>
         </Suspense>
       </div>
-      <article
-        className="prose dark:prose-invert"
-        dangerouslySetInnerHTML={{ __html: post.source }}
-      ></article>
+      <MarkdownRenderer 
+        content={post.rawContent} 
+        className="prose dark:prose-invert max-w-none"
+      />
     </section>
   );
 }
