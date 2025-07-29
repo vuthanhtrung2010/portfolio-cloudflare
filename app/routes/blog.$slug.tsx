@@ -16,7 +16,9 @@ export async function loader({ params, context }: Route.LoaderArgs) {
 }
 
 export function meta({ matches }: Route.MetaArgs): Route.MetaDescriptors {
-  const post = matches[0].data as unknown as Post;
+  const currentMatch = matches.find(match => match?.id === "routes/blog.$slug");
+  const post = currentMatch?.data as Post | undefined;
+
   if (!post) {
     return [];
   }
