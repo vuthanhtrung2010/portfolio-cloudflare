@@ -18,6 +18,31 @@ export async function loader({ context }: Route.LoaderArgs) {
     return Response.json(posts);
 }
 
+export function meta({}: Route.MetaArgs): Route.MetaDescriptors {
+  return [
+    {
+      title: "Blog",
+      description: "My thoughts on software development, life, and more.",
+    },
+    {
+      name: "og:title",
+      content: "Blog",
+    },
+    {
+      name: "og:description",
+      content: "My thoughts on software development, life, and more.",
+    },
+    {
+      name: "twitter:title",
+      content: "Blog",
+    },
+    {
+      name: "twitter:description",
+      content: "My thoughts on software development, life, and more.",
+    },
+  ]
+}
+
 export default function BlogPage({ loaderData }: Route.ComponentProps) {
   const posts: BlogPost[] = loaderData;
 

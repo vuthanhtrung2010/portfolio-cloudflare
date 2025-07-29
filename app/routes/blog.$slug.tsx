@@ -1,4 +1,4 @@
-import { getPost } from "~/data/blog";
+import { getPost, type Post } from "~/data/blog";
 import { DATA } from "~/data/resume";
 import { formatDate } from "~/lib/utils";
 import { Suspense } from "react";
@@ -7,12 +7,37 @@ import { Link } from "react-router";
 import { MarkdownRenderer } from "~/components/MarkdownRenderer";
 
 export async function loader({ params, context }: Route.LoaderArgs) {
-    let post = await getPost(context.cloudflare.env, params.slug);
-    if (!post) {
-        throw new Response("Post not found", { status: 404 });
-    }
+  let post = await getPost(context.cloudflare.env, params.slug);
+  if (!post) {
+    throw new Response("Post not found", { status: 404 });
+  }
 
-    return post;
+  return post;
+}
+
+export function meta({ matches }: Route.MetaArgs): Route.MetaDescriptors {
+  const post = matches[0].data as unknown as Post;
+  if (!post) {
+    return [];
+  }
+
+  const { title, publishedAt, summary, image } = post.metadata;
+
+  return [
+    { title, description: summary },
+    { name: "og:title", content: title },
+    { name: "og:description", content: summary },
+    {
+      name: "og:image",
+      content: image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`,
+    },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: summary },
+    {
+      name: "twitter:image",
+      content: image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`,
+    },
+  ];
 }
 
 export default async function Blog({ loaderData }: Route.ComponentProps) {
@@ -52,8 +77,8 @@ export default async function Blog({ loaderData }: Route.ComponentProps) {
           </p>
         </Suspense>
       </div>
-      <MarkdownRenderer 
-        content={post.rawContent} 
+      <MarkdownRenderer
+        content={post.rawContent}
         className="prose dark:prose-invert max-w-none"
       />
     </section>
@@ -73,4 +98,3 @@ export function ErrorBoundary() {
     </section>
   );
 }
-
